@@ -1,0 +1,85 @@
+<html lang="zh-TW">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="content-language" content="zh-tw" />
+    <title>RinYou with GitHub</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css" />
+	<style type="text/css">
+	.carousel-item {
+	  height: 100vh;
+	  min-height: 350px;
+	  background: no-repeat center center scroll;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
+	</style>
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index.html">RinYou with GitHub</a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">首頁 
+          <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">關於</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="index-slider" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#index-slider" data-slide-to="0" class="active"></li>
+    <li data-target="#index-slider" data-slide-to="1"></li>
+    <li data-target="#index-slider" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="background-image: url('images/slider-001.jpg')">
+      <div class="carousel-caption">
+        <h3>Welcome</h3>
+        <p>歡迎來到我的GitHub網站</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="background-image: url('images/slider-002.jpg')">
+      <div class="carousel-caption">
+        <h3>Picture</h3>
+        <p>By Free-Photos</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="background-image: url('images/slider-003.jpg')">
+      <div class="carousel-caption">
+        <h3>Beautiful</h3>
+        <p>Thanks for chois2880!</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#index-slider" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#index-slider" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+  </body>
+  <a class="carousel-control-prev" href="#index-slider" data-slide="prev"></a> 
+  <a class="carousel-control-next" href="#index-slider" data-slide="next"></a></div>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+  <script type='text/javascript' src='js/bootstrap.min.js'></script> 
+  <script type='text/javascript' src='js/bootstrap.bundle.min.js'></script>
+  <script>
+  $(document).ready(function() {
+    $("#index-slider").swiperight(function() {
+      $(this).carousel('prev');
+    });
+    $("#index-slider").swipeleft(function() {
+      $(this).carousel('next');
+     });
+  });
+  </script><!--滑動上下張-->
+</html>
