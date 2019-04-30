@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-TW">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -8,6 +9,51 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<style type="text/css">
+	@keyframes animate-rotate{
+		0% {transform:rotateY(-90deg);}
+		100% {transform:rotateY(0deg);}
+	}
+	@-moz-keyframes animate-rotate{
+		0% {-moz-transform:rotateY(-90deg);}
+		100% {-moz-transform:rotateY(0deg);}
+	}
+	@-webkit-keyframes myfirs{
+		0% {-webkit-transform:rotateY(-90deg);}
+		100% {-webkit-transform:rotateY(0deg);}
+	}
+	@-o-keyframes animate-rotate{
+		0% {transform:rotateY(-90deg);}
+		100% {transform:rotateY(0deg);}
+	}
+	#index001{
+		transform:rotateY(-90deg);
+		-moz-transform:rotateY(-90deg);
+		-webkit-transform:rotateY(-90deg);
+	}
+	.rotateAnimate{
+		animation: animate-rotate 2s;
+		-moz-animation: animate-rotate 2s;
+		-webkit-animation: animate-rotate 2s;
+		-o-animation: animate-rotate 2s;
+		animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-o-animation-fill-mode: forwards;
+	}
+	#index002{
+		transition: opacity 2s;
+		-moz-transition: opacity 2s;
+		-webkit-transition: opacity 2s;
+		-o-transition: opacity 2s;
+	}
+	.hidden{
+		opacity:0;
+	}
+	.fadeIn{
+		opacity:1;
+	}
+	</style>
   </head>
   <body>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -28,41 +74,77 @@
     </div>
   </nav>
   <div id="index-slider" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#index-slider" data-slide-to="0" class="active"></li>
-    <li data-target="#index-slider" data-slide-to="1"></li>
-    <li data-target="#index-slider" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active" style="background-image: url('images/slider-001.jpg')">
-      <div class="carousel-caption">
-        <h3>Welcome</h3>
-        <p>歡迎來到我的GitHub網站</p>
+    <ul class="carousel-indicators">
+      <li data-target="#index-slider" data-slide-to="0" class="active"></li>
+      <li data-target="#index-slider" data-slide-to="1"></li>
+      <li data-target="#index-slider" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('images/slider-001.jpg')">
+        <div class="carousel-caption">
+          <h3>Welcome</h3>
+          <p>歡迎來到我的GitHub網站</p>
+        </div>
       </div>
-    </div>
-    <div class="carousel-item" style="background-image: url('images/slider-002.jpg')">
-      <div class="carousel-caption">
-        <h3>Picture</h3>
-        <p>By Free-Photos</p>
+      <div class="carousel-item" style="background-image: url('images/slider-002.jpg')">
+        <div class="carousel-caption">
+          <h3>Picture</h3>
+          <p>By Free-Photos</p>
+        </div>
       </div>
+      <div class="carousel-item" style="background-image: url('images/slider-003.jpg')">
+        <div class="carousel-caption">
+          <h3>Beautiful</h3>
+          <p>Thanks for chois2880!</p>
+        </div>
+	  </div>
     </div>
-    <div class="carousel-item" style="background-image: url('images/slider-003.jpg')">
-      <div class="carousel-caption">
-        <h3>Beautiful</h3>
-        <p>Thanks for chois2880!</p>
-      </div>
-    </div>
+    <a class="carousel-control-prev" href="#index-slider" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#index-slider" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
   </div>
-  <a class="carousel-control-prev" href="#index-slider" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#index-slider" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
+  <main role="main" style="background:url('images/indexBg-001.jpg');">
+  <div class="container" style="padding: 5em 0;">
+    <div class="row">
+	  <div class="col-md-5">
+		<img id="index001" src="images/index-001.jpg" class="img-fluid">
+	  </div>
+	  <div id="index002" class="col-md align-self-center hidden" style="position: relative;left: -2em;background:#cec1a7;box-shadow: 10px 10px 0px #9a5a5a;">
+		<h1>RinYou with GitHub</h1>
+		<div class="row align-items-center" style="padding: 1em 0;">
+		  <div class="col-md">
+			  <img src="images/profile.jpg" class="img-fluid">
+		  </div>
+		  <div class="col-md-9">
+		    <p>歡迎光臨，這是站長RinYou在此學習操作網頁程式、系統運作的網站(如:html5, css3, javascript, jquery, git)，若有任何問題歡迎指教，謝謝</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  </main>
+  <footer style="background: #9a9aa9;border-top: 1px #9197a7 solid;">
+	Here is footer
+  </footer>
   </body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
   <script type='text/javascript' src='js/bootstrap.min.js'></script> 
   <script type='text/javascript' src='js/bootstrap.bundle.min.js'></script>
   <script type='text/javascript' src='js/navicon.js'></script>
   <script type='text/javascript' src='js/carousel-swipe.js'></script>
+  <script>
+$(window).on('scroll', function () {
+	var scrollTop     = $(window).scrollTop(),
+		windowHeight  = $(window).height(),
+		elementOffset = $('#index001').offset().top,
+		elementHeight = $('#index001').height();
+	if(scrollTop+windowHeight >= elementOffset+(elementHeight/4)){
+		$('#index001').addClass('rotateAnimate');
+		$('#index002').addClass('fadeIn');
+	}
+});
+  </script>
 </html>
