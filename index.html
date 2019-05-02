@@ -4,83 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;" />
     <meta http-equiv="content-language" content="zh-tw" />
-    <title>RinYou with GitHub</title>
+    <title>RinYou on GitHub</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-	<style type="text/css">
-	@keyframes animate-rotate{
-		0% {transform:rotateY(-90deg);}
-		100% {transform:rotateY(0deg);}
-	}
-	@-moz-keyframes animate-rotate{
-		0% {-moz-transform:rotateY(-90deg);}
-		100% {-moz-transform:rotateY(0deg);}
-	}
-	@-webkit-keyframes myfirs{
-		0% {-webkit-transform:rotateY(-90deg);}
-		100% {-webkit-transform:rotateY(0deg);}
-	}
-	@-o-keyframes animate-rotate{
-		0% {transform:rotateY(-90deg);}
-		100% {transform:rotateY(0deg);}
-	}
-	#index001{
-		transform:rotateY(-90deg);
-		-moz-transform:rotateY(-90deg);
-		-webkit-transform:rotateY(-90deg);
-	}
-	.rotateAnimate{
-		animation: animate-rotate 2s;
-		-moz-animation: animate-rotate 2s;
-		-webkit-animation: animate-rotate 2s;
-		-o-animation: animate-rotate 2s;
-		animation-fill-mode: forwards;
-		-moz-animation-fill-mode: forwards;
-		-webkit-animation-fill-mode: forwards;
-		-o-animation-fill-mode: forwards;
-	}
-	#index002{
-		transition: opacity 2s;
-		-moz-transition: opacity 2s;
-		-webkit-transition: opacity 2s;
-		-o-transition: opacity 2s;
-	}
-	.hidden{
-		opacity:0;
-	}
-	.fadeIn{
-		opacity:1;
-	}
-#overlay{
-  position:fixed;
-  z-index:99999;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-  background:rgba(0,0,0,0.9);
-  transition: 1s 0.4s;
-}
-#progress{
-  height:1px;
-  background:#fff;
-  position:absolute;
-  width:0;
-  top:50%;
-}
-#progstat{
-  font-size:0.7em;
-  letter-spacing: 3px;
-  position:absolute;
-  top:50%;
-  margin-top:-40px;
-  width:100%;
-  text-align:center;
-  color:#fff;
-}
-	</style>
   </head>
   <div id="overlay">
     <div id="progstat"></div>
@@ -88,18 +16,27 @@
   </div>
   <body>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="index.html">RinYou with GitHub</a>
+    <a class="navbar-brand" href="index.html">RinYou on GitHub</a>
 	<button class="navbar-toggler button-animate" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 	  <div class="animated-icon"><span></span><span></span><span></span><span></span></div>
 	</button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">首頁 
+          <a class="nav-link" href="index.html">首頁 
           <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">關於</a>
+          <a class="nav-link" href="html5.html">html5</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">css3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">JS+jquery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">git</a>
         </li>
       </ul>
     </div>
@@ -138,12 +75,48 @@
     </a>
   </div>
   <main role="main" style="background:url('images/indexBg-001.jpg');">
-  <div class="container" style="padding: 5em 0;">
+  <div class="container py-5">
+	<div class="card-deck">
+	  <div class="card">
+		<img src="images/index-card-001.jpg" class="card-img-top">
+		<div class="card-body">
+		  <h5 class="card-title">html5+css3</h5>
+		  <p class="card-text">html5希望能夠減少網頁瀏覽器對於需要外掛程式的豐富性網路應用服務（Plug-in-Based Rich Internet Application，RIA），例如：Adobe Flash、Microsoft Silverlight與Oracle JavaFX的需求，並且提供更多能有效加強網路應用的標準集。</p>
+		  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		</div>
+	  </div>
+	  <div class="card">
+		<img src="images/index-card-002.jpg" class="card-img-top">
+		<div class="card-body">
+		  <h5 class="card-title">javascript+jquery</h5>
+		  <p class="card-text">在用戶端，JavaScript在傳統意義上被實作為一種解釋語言，但在最近，它已經可以被即時編譯（JIT）執行。隨著最新的HTML5和CSS3語言標準的推行它還可用於遊戲、桌面和行動應用程式的開發和在伺服器端網路環境執行，如Node.js。</p>
+		  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		</div>
+	  </div>
+	  <div class="card">
+		<img src="images/index-card-003.jpg" class="card-img-top">
+		<div class="card-body">
+		  <h5 class="card-title">git</h5>
+		  <p class="card-text">git是一個分散式版本控制軟體，最初由林納斯·托瓦茲創作，於2005年以GPL釋出。</p>
+		  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		</div>
+	  </div>
+	</div>
+	<!--
+	<details>
+	  <summary>HTML 5</summary>
+	  This document teaches you everything you have to learn about HTML 5.
+	</details>
+	-->
+  </div>
+  </main>
+  <section style="background: #dccfc3;">
+  <div class="container py-5">
     <div class="row">
 	  <div class="col-md-5">
 		<img id="index001" src="images/index-001.jpg" class="img-fluid">
 	  </div>
-	  <div id="index002" class="col-md align-self-center hidden" style="position: relative;left: -2em;background:#cec1a7;box-shadow: 10px 10px 0px #9a5a5a;">
+	  <div id="index002" class="col-md align-self-center hidden">
 		<h1>RinYou with GitHub</h1>
 		<div class="row align-items-center" style="padding: 1em 0;">
 		  <div class="col-md">
@@ -155,14 +128,10 @@
 		</div>
 	  </div>
 	</div>
-	<details>
-	  <summary>HTML 5</summary>
-	  This document teaches you everything you have to learn about HTML 5.
-	</details>
   </div>
-  </main>
-  <footer class="text-center" style="background: #7f808e;border-top: 1px #9197a7 solid;color: #bdbdbd;">
-	Here is footer
+  </section>
+  <footer class="text-center footer">
+	<a href="https://rinyou.github.io/" style="color: #828282;text-decoration:none;">https://rinyou.github.io/</a>
   </footer>
   </body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
@@ -170,53 +139,6 @@
   <script type='text/javascript' src='js/bootstrap.bundle.min.js'></script>
   <script type='text/javascript' src='js/navicon.js'></script>
   <script type='text/javascript' src='js/carousel-swipe.js'></script>
-  <script>
-$(window).on('scroll', function () {
-	var scrollTop     = $(window).scrollTop(),
-		windowHeight  = $(window).height(),
-		elementOffset = $('#index001').offset().top,
-		elementHeight = $('#index001').height();
-	if(scrollTop+windowHeight >= elementOffset+(elementHeight/4)){
-		$('#index001').addClass('rotateAnimate');
-		$('#index002').addClass('fadeIn');
-	}
-});
-addEventListener("load", function () {
-	setTimeout(hideURLbar, 0);
-}, false);
-function hideURLbar() {
-	window.scrollTo(0, 1);
-}
-$(function(){
-function id(v){return document.getElementById(v); }
-function loadbar() {
-	var ovrl = id("overlay"),
-		prog = id("progress"),
-		stat = id("progstat"),
-		img = document.images,
-		c = 0;
-		tot = img.length;
-	function imgLoaded(){
-	  c += 1;
-	  var perc = ((100/tot*c) << 0) +"%";
-	  prog.style.width = perc;
-	  stat.innerHTML = "Loading "+ perc;
-	  if(c===tot) return doneLoading();
-	}
-	function doneLoading(){
-	  ovrl.style.opacity = 0;
-	  setTimeout(function(){ 
-		ovrl.style.display = "none";
-	  }, 1200);
-	}
-	for(var i=0; i<tot; i++) {
-	  var tImg     = new Image();
-	  tImg.onload  = imgLoaded;
-	  tImg.onerror = imgLoaded;
-	  tImg.src     = img[i].src;
-	}
-}
-document.addEventListener('DOMContentLoaded', loadbar, false);
-}());
-  </script>
+  <script type='text/javascript' src='js/index-animate.js'></script>
+  <script type='text/javascript' src='js/pageLoading.js'></script>
 </html>

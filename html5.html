@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="content-language" content="zh-tw" />
+    <title>RinYou on GitHub</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+	<style type="text/css">
+	body{background: #fbf9ed;}
+	.container{    background: #fff;}
+	#div1 {float: left;width: 25%;height: 277.5px;padding:10px;border:1px solid #aaaaaa;}
+	#div2 {float: left;width: 25%;height: 277.5px;padding:10px;border:1px solid #aaaaaa;}
+	.scale-video {
+	  width: 100%;
+	  padding-top: 56.25%;
+	  position: relative;
+	}
+
+	.scale-video video {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	}
+	</style>
+  </head>
+  <div id="overlay">
+    <div id="progstat"></div>
+    <div id="progress"></div>
+  </div>
+  <body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index.html">RinYou on GitHub</a>
+	<button class="navbar-toggler button-animate" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <div class="animated-icon"><span></span><span></span><span></span><span></span></div>
+	</button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">首頁</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="html5.html">html5
+          <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">css3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">JS+jquery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">git</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section style="background:url('images/html5-banner.jpg');position: relative;overflow: hidden;background-size: cover;background-position: center;">
+    <div class="container-fluid p-0">
+	  <div class="d-flex flex-row justify-content-center" style="height:380px;">
+	  	<h1 class="banner-text display-4 align-self-center wow bounceInUp">HTML5</h1>
+	  	<div class="banner-animate-1"> </div>
+	  	<div class="banner-animate-2"> </div>
+	  </div>
+	</div>
+  </section>
+  <section>
+	<div class="container py-3">
+	  <div class="row">
+	    <div class="col-md-12">
+	      <nav aria-label="breadcrumb">
+	        <ol class="breadcrumb">
+		      <li class="breadcrumb-item"><a href="#">首頁</a></li>
+		      <li class="breadcrumb-item active" aria-current="page">html5</li>
+	        </ol>
+	      </nav>
+	    </div>
+	  </div>
+	</div>
+  </section>
+  <section>
+    <div class="container">
+	  <div class="row">
+	    <div class="col-md-12">
+		  <h2>video 標籤</h2>
+		  <p>
+		    <code>
+			  &lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;controls&quot autoplay=&quotautoplay&quot;&gt;<br>
+			  &nbsp;&nbsp;&lt;source src=&quot;xxx/xxx.ogg&quot; type=&quot;video/ogg&quot;&gt;<br>
+			  &nbsp;&nbsp;&lt;source src=&quot;xxx/xxx.mp4&quot; type=&quot;video/mp4&quot;&gt;<br>
+			  &nbsp;&nbsp;Your browser does not support the video tag.(如不支援video標籤說明文字)<br>
+			  &lt;/video&gt;
+			</code>
+		  </p>
+		  <p>
+		    <span class="badge badge-secondary">controls</span> 顯示控制器<br>
+		    <span class="badge badge-secondary">autoplay</span> 自動撥放
+		  </p>
+		  <div class="scale-video">
+			<video width="640" height="360" controls="controls" autoplay="autoplay">
+			  <source src="media/Planet.ogg" type="video/ogg">
+			  <source src="media/Planet.mp4" type="video/mp4">
+			  Your browser does not support the video tag.
+			</video>
+		  </div>
+		</div>
+		<hr>
+	    <div class="col-md-12">
+		  <h2>audio 標籤</h2>
+		  <p>
+		    <code>
+		      &lt;audio controls="controls"&gt;<br>
+		        &nbsp;&nbsp;&lt;source src=&quot;xxx.ogg&quot; type="audio/ogg"&gt;<br>
+		        &nbsp;&nbsp;&lt;source src=&quot;xxx.mp3&quot; type="audio/mpeg"&gt;<br>
+		        &nbsp;&nbsp;Your browser does not support the audio tag.(如不支援audio標籤說明文字)<br>
+		      &lt;/audio&gt;
+			</code>
+		  </p>
+		  <p>
+		    <span class="badge badge-secondary">controls</span> 顯示控制器<br>
+		    <span class="badge badge-secondary">autoplay</span> 自動撥放<br>
+		    <span class="badge badge-secondary">loop</span> 循環播放
+		  </p>
+		  <audio controls="controls">
+		    <source src="media/recuerdo.ogg" type="audio/ogg">
+		    <source src="media/recuerdo.mp3" type="audio/mpeg">
+		    Your browser does not support the audio tag.(如不支援audio標籤說明文字)
+		  </audio>
+		</div>
+		<hr>
+	    <div class="col-md-12">
+		  <h2>元素拖放</h2>
+		  <p>
+		    <code>
+			  &lt;script type=&quot;text/javascript&quot;&gt;<br>
+				&nbsp;&nbsp;function allowDrop(ev){<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;ev.preventDefault();<br>
+				&nbsp;&nbsp;}<br>
+				&nbsp;&nbsp;function drag(ev){<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;ev.dataTransfer.setData("text",ev.target.id);<br>
+			    &nbsp;&nbsp;}<br>
+			    &nbsp;&nbsp;function drop(ev){<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;ev.preventDefault();<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;var data=ev.dataTransfer.getData(&quot;Text&quot;);<br>
+			  	  &nbsp;&nbsp;&nbsp;&nbsp;ev.target.appendChild(document.getElementById(data));<br>
+			    &nbsp;&nbsp;}<br>
+			  &lt;/script&gt;<br>
+			  &lt;div id=&quot;div1&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;<br>
+			  &lt;div id=&quot;div2&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;<br>
+			  &lt;img id=&quot;drag1&quot; src=&quot;images/ball.png&quot; draggable=&quot;true&quot; ondragstart=&quot;drag(event)&quot; /&gt;
+			</code>
+		  </p>
+		  <p>
+		    <span class="badge badge-secondary">draggable</span> -true 元素可拖動<br>
+		    <span class="badge badge-secondary">ondragstart</span> 當開始拖動時觸發事件<br>
+		    <span class="badge badge-secondary">ondragover</span> 可以放置在哪裡，調用方法event.preventDefault()<br>
+		    <span class="badge badge-secondary">ondrop</span> 放置時觸發事件
+		    <span class="badge badge-secondary">dataTransfer.setData()</span> 方法設置("類型",值)
+		    <span class="badge badge-secondary">dataTransfer.getData() ()</span> 方法取得setData相同("類型")的數據
+		  </p>
+		  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		  <img id="drag1" src="images/ball.png" draggable="true" ondragstart="drag(event)" />
+		</div>
+		<hr>
+	    <div class="col-md-12">
+		  <code>&lt;summary&gt;HTML 5&lt;/summary&gt;</code>
+  	      <details>
+	        <summary>HTML 5</summary>
+	        This document teaches you everything you have to learn about HTML 5.
+	      </details>
+	    </div>
+	  <div class="col-md-12">
+	</div>
+  </section>
+  <footer class="text-center footer">
+	<a href="https://rinyou.github.io/" style="color: #828282;text-decoration:none;">https://rinyou.github.io/</a>
+  </footer>
+  </body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+  <script type='text/javascript' src='js/bootstrap.min.js'></script> 
+  <script type='text/javascript' src='js/bootstrap.bundle.min.js'></script>
+  <script type='text/javascript' src='js/navicon.js'></script>
+  <script type='text/javascript' src='js/carousel-swipe.js'></script>
+  <script type='text/javascript' src='js/pageLoading.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+  $( document ).ready(function() {
+      $('.banner-animate-1').css('width', '0%');
+      $('.banner-animate-2').css('width', '0%');
+  });
+  new WOW().init();
+  </script>
+<script type="text/javascript">
+function allowDrop(ev){
+  ev.preventDefault();
+}
+function drag(ev){
+  ev.dataTransfer.setData("text",ev.target.id);
+}
+function drop(ev){
+  ev.preventDefault();
+  var data=ev.dataTransfer.getData("Text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</html>
