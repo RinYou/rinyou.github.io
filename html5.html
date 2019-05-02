@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;" />
     <meta http-equiv="content-language" content="zh-tw" />
+	<meta property="og:image" content="images/slider-003.jpg">
     <title>RinYou on GitHub</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
@@ -20,7 +21,6 @@
 	  padding-top: 56.25%;
 	  position: relative;
 	}
-
 	.scale-video video {
 	  position: absolute;
 	  top: 0;
@@ -89,15 +89,13 @@
 	  <div class="row">
 	    <div class="col-md-12">
 		  <h2>video 標籤</h2>
-		  <p>
-		    <code>
-			  &lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;controls&quot autoplay=&quotautoplay&quot;&gt;<br>
-			  &nbsp;&nbsp;&lt;source src=&quot;xxx/xxx.ogg&quot; type=&quot;video/ogg&quot;&gt;<br>
-			  &nbsp;&nbsp;&lt;source src=&quot;xxx/xxx.mp4&quot; type=&quot;video/mp4&quot;&gt;<br>
-			  &nbsp;&nbsp;Your browser does not support the video tag.(如不支援video標籤說明文字)<br>
-			  &lt;/video&gt;
-			</code>
-		  </p>
+		  <pre><code>
+&lt;video width=&quot;640&quot; height=&quot;360&quot; controls=&quot;controls&quot autoplay=&quotautoplay&quot;&gt;
+  &lt;source src=&quot;xxx/xxx.ogg&quot; type=&quot;video/ogg&quot;&gt;
+  &lt;source src=&quot;xxx/xxx.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  Your browser does not support the video tag.(如不支援video標籤說明文字)
+&lt;/video&gt;
+		  </code></pre>
 		  <p>
 		    <span class="badge badge-secondary">controls</span> 顯示控制器<br>
 		    <span class="badge badge-secondary">autoplay</span> 自動撥放
@@ -113,15 +111,13 @@
 		<hr>
 	    <div class="col-md-12">
 		  <h2>audio 標籤</h2>
-		  <p>
-		    <code>
-		      &lt;audio controls="controls"&gt;<br>
-		        &nbsp;&nbsp;&lt;source src=&quot;xxx.ogg&quot; type="audio/ogg"&gt;<br>
-		        &nbsp;&nbsp;&lt;source src=&quot;xxx.mp3&quot; type="audio/mpeg"&gt;<br>
-		        &nbsp;&nbsp;Your browser does not support the audio tag.(如不支援audio標籤說明文字)<br>
-		      &lt;/audio&gt;
-			</code>
-		  </p>
+		  <pre><code>
+&lt;audio controls="controls"&gt;
+  &lt;source src=&quot;xxx.ogg&quot; type="audio/ogg"&gt;
+  &lt;source src=&quot;xxx.mp3&quot; type="audio/mpeg"&gt;
+  Your browser does not support the audio tag.(如不支援audio標籤說明文字)
+&lt;/audio&gt;
+		  </code></pre>
 		  <p>
 		    <span class="badge badge-secondary">controls</span> 顯示控制器<br>
 		    <span class="badge badge-secondary">autoplay</span> 自動撥放<br>
@@ -137,24 +133,24 @@
 	    <div class="col-md-12">
 		  <h2>元素拖放</h2>
 		  <p>
-		    <code>
-			  &lt;script type=&quot;text/javascript&quot;&gt;<br>
-				&nbsp;&nbsp;function allowDrop(ev){<br>
-				  &nbsp;&nbsp;&nbsp;&nbsp;ev.preventDefault();<br>
-				&nbsp;&nbsp;}<br>
-				&nbsp;&nbsp;function drag(ev){<br>
-				  &nbsp;&nbsp;&nbsp;&nbsp;ev.dataTransfer.setData("text",ev.target.id);<br>
-			    &nbsp;&nbsp;}<br>
-			    &nbsp;&nbsp;function drop(ev){<br>
-				  &nbsp;&nbsp;&nbsp;&nbsp;ev.preventDefault();<br>
-				  &nbsp;&nbsp;&nbsp;&nbsp;var data=ev.dataTransfer.getData(&quot;Text&quot;);<br>
-			  	  &nbsp;&nbsp;&nbsp;&nbsp;ev.target.appendChild(document.getElementById(data));<br>
-			    &nbsp;&nbsp;}<br>
-			  &lt;/script&gt;<br>
-			  &lt;div id=&quot;div1&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;<br>
-			  &lt;div id=&quot;div2&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;<br>
-			  &lt;img id=&quot;drag1&quot; src=&quot;images/ball.png&quot; draggable=&quot;true&quot; ondragstart=&quot;drag(event)&quot; /&gt;
-			</code>
+		  <pre><code>
+&lt;script type=&quot;text/javascript&quot;&gt;
+  function allowDrop(ev){
+    ev.preventDefault();
+  }
+  function drag(ev){
+    ev.dataTransfer.setData("text",ev.target.id);
+  }
+  function drop(ev){
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData(&quot;Text&quot;);
+    v.target.appendChild(document.getElementById(data));
+  }
+&lt;/script&gt;
+&lt;div id=&quot;div1&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;div2&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;
+&lt;img id=&quot;drag1&quot; src=&quot;images/ball.png&quot; draggable=&quot;true&quot; ondragstart=&quot;drag(event)&quot; /&gt;
+		  </code></pre>
 		  </p>
 		  <p>
 		    <span class="badge badge-secondary">draggable</span> -true 元素可拖動<br>
@@ -166,10 +162,11 @@
 		  </p>
 		  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 		  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-		  <img id="drag1" src="images/ball.png" draggable="true" ondragstart="drag(event)" />
+		  <img id="drag1" class="mx-auto d-block" src="images/ball.png" draggable="true" ondragstart="drag(event)" />
 		</div>
 		<hr>
 	    <div class="col-md-12">
+		<kbd>cd</kbd>
 		  <code>&lt;summary&gt;HTML 5&lt;/summary&gt;</code>
   	      <details>
 	        <summary>HTML 5</summary>
