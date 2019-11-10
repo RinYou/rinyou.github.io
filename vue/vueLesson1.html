@@ -19,10 +19,10 @@
 	<meta property="og:description" content="這是站長RinYou在此學習操作網頁程式、系統運作的網站(如:html5, css3, javascript, jquery, git)" >
 	<meta property="og:image" content="images/slider-003.jpg">
     <title>RinYou on GitHub</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
 	<style type="text/css">
 	body{background: #fbf9ed;}
@@ -56,16 +56,16 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">首頁</a>
+          <a class="nav-link" href="../index.html">首頁</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="html5.html">html5</a>
+          <a class="nav-link" href="../html5.html">html5</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">css3</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="vueList.html">vue 
+          <a class="nav-link" href="../vueList.html">vue 
           <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
@@ -74,7 +74,7 @@
       </ul>
     </div>
   </nav>
-  <section style="background:url('images/html5-banner.jpg');position: relative;overflow: hidden;background-size: cover;background-position: center;">
+  <section style="background:url('../images/html5-banner.jpg');position: relative;overflow: hidden;background-size: cover;background-position: center;">
     <div class="container-fluid p-0">
 	  <div class="d-flex flex-row justify-content-center" style="height:380px;">
 	  	<h1 class="banner-text display-4 align-self-center wow bounceInUp">Vue</h1>
@@ -89,8 +89,9 @@
 	    <div class="col-md-12">
 	      <nav aria-label="breadcrumb">
 	        <ol class="breadcrumb">
-		      <li class="breadcrumb-item"><a href="#">首頁</a></li>
-		      <li class="breadcrumb-item active" aria-current="page">Vue</li>
+		      <li class="breadcrumb-item"><a href="../index.html">首頁</a></li>
+		      <li class="breadcrumb-item"><a href="../vueList.html">Vue</a></li>
+		      <li class="breadcrumb-item active" aria-current="page">Lesson1</li>
 	        </ol>
 	      </nav>
 	    </div>
@@ -101,16 +102,16 @@
     <div class="container">
 	  <div class="row">
 	    <div class="col-md-12">
-		  <h2>學習清單</h2>
-		  <ul>
-		  	<li><a href="vue/vueLesson1.html">Lesson1</a></li>
-		  	<li><a href="vue/vueLesson2.html">Lesson2</a></li>
-		  	<li><a href="vue/vueLesson3.html">Lesson3</a></li>
-		  </ul>
-		  <h2>範例實作</h2>
-		  <ul>
-		  	<li><a href="vue/vueExample1.html">Example1</a></li>
-		  </ul>
+		  <h2>Lesson1</h2>
+		  <div id="app">
+		    {{message}}
+		  </div>
+		  <div id="app2">
+		    <p>{{message}}</p>
+		  </div>
+		  <div id="app3">
+		    <p>{{message}}</p>
+		  </div>
 		</div>
 	  </div>
 	</div>
@@ -120,12 +121,13 @@
   </footer>
   </body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
-  <script type='text/javascript' src='js/bootstrap.min.js'></script> 
-  <script type='text/javascript' src='js/bootstrap.bundle.min.js'></script>
-  <script type='text/javascript' src='js/navicon.js'></script>
-  <script type='text/javascript' src='js/carousel-swipe.js'></script>
-  <script type='text/javascript' src='js/pageLoading.js'></script>
+  <script type='text/javascript' src='../js/bootstrap.min.js'></script> 
+  <script type='text/javascript' src='../js/bootstrap.bundle.min.js'></script>
+  <script type='text/javascript' src='../js/navicon.js'></script>
+  <script type='text/javascript' src='../js/carousel-swipe.js'></script>
+  <script type='text/javascript' src='../js/pageLoading.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script src="../js/vue.js"></script>
   <script>
   $( document ).ready(function() {
       $('.banner-animate-1').css('width', '0%');
@@ -133,17 +135,52 @@
   });
   new WOW().init();
   </script>
-<script type="text/javascript">
-function allowDrop(ev){
-  ev.preventDefault();
-}
-function drag(ev){
-  ev.dataTransfer.setData("text",ev.target.id);
-}
-function drop(ev){
-  ev.preventDefault();
-  var data=ev.dataTransfer.getData("Text");
-  ev.target.appendChild(document.getElementById(data));
-}
+  <script type="text/javascript">
+  function allowDrop(ev){
+    ev.preventDefault();
+  }
+  function drag(ev){
+    ev.dataTransfer.setData("text",ev.target.id);
+  }
+  function drop(ev){
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+
+	var vm = new Vue({
+        el: "#app",
+        data: {
+            message: 1
+        },
+	});
+	// template 取代 html
+	var vm2 = new Vue({
+        el: "#app2",
+        template: '<div class="template">template: {{message}}</div>',
+        data: {
+            message: 2
+        },
+	});
+	// render 使用 render function
+	var vm3 = new Vue({
+        el: "#app3",
+        render(h) {
+            return h(
+                'div',
+                {
+                    'class': {
+                        render: true
+                    }
+                },
+                `render: ${this.message}`
+            )
+        },
+        data: {
+            message: 3
+        },
+    });
+    vm3.$data.message = 500; // 可更改
+    console.log('vm3.$data.message = '+vm3.$data.message); // 取出值
 </script>
 </html>

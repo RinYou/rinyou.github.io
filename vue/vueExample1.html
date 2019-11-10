@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;" />
+	<meta http-equiv="content-language" content="zh-Hant-TW" />
+	<meta name="author" content="RinYou">
+	<meta name="copyright" content="RinYou">
+
+	<meta name="description" content="這是站長RinYou在此學習操作網頁程式、系統運作的網站(如:html5, css3, javascript, jquery, git)">
+
+	<meta itemprop="name" content="RinYou on GitHub">
+	<meta itemprop="image" content="images/slider-003.jpg">
+	<meta itemprop="description" content="這是站長RinYou在此學習操作網頁程式、系統運作的網站(如:html5, css3, javascript, jquery, git)">
+
+	<meta property="og:title" content="RinYou on GitHub" >
+	<meta property="og:url" content="rinyou.github.io">
+	<meta property="og:image" content="images/slider-003.jpg">
+	<meta property="og:description" content="這是站長RinYou在此學習操作網頁程式、系統運作的網站(如:html5, css3, javascript, jquery, git)" >
+	<meta property="og:image" content="images/slider-003.jpg">
+    <title>RinYou on GitHub</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/vue-slider.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+	<style type="text/css">
+	body{background: #fbf9ed;}
+	.container{    background: #fff;}
+	#div1 {float: left;width: 25%;height: 277.5px;padding:10px;border:1px solid #aaaaaa;}
+	#div2 {float: left;width: 25%;height: 277.5px;padding:10px;border:1px solid #aaaaaa;}
+	.scale-video {
+	  width: 100%;
+	  padding-top: 56.25%;
+	  position: relative;
+	}
+	.scale-video video {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	}
+	</style>
+  </head>
+  <div id="overlay">
+    <div id="progstat"></div>
+    <div id="progress"></div>
+  </div>
+  <body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index.html">RinYou on GitHub</a>
+	<button class="navbar-toggler button-animate" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <div class="animated-icon"><span></span><span></span><span></span><span></span></div>
+	</button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html5.html">html5</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">css3</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../vueList.html">vue 
+          <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">git</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section style="background:url('../images/html5-banner.jpg');position: relative;overflow: hidden;background-size: cover;background-position: center;">
+    <div class="container-fluid p-0">
+	  <div class="d-flex flex-row justify-content-center" style="height:380px;">
+	  	<h1 class="banner-text display-4 align-self-center wow bounceInUp">Vue</h1>
+	  	<div class="banner-animate-1"> </div>
+	  	<div class="banner-animate-2"> </div>
+	  </div>
+	</div>
+  </section>
+  <section>
+	<div class="container py-3">
+	  <div class="row">
+	    <div class="col-md-12">
+	      <nav aria-label="breadcrumb">
+	        <ol class="breadcrumb">
+		      <li class="breadcrumb-item"><a href="../index.html">首頁</a></li>
+		      <li class="breadcrumb-item"><a href="../vueList.html">Vue</a></li>
+		      <li class="breadcrumb-item active" aria-current="page">Example1</li>
+	        </ol>
+	      </nav>
+	    </div>
+	  </div>
+	</div>
+  </section>
+  <section>
+    <div class="container">
+    	<h2>圖片輪播</h2>
+		<div id="app">
+		  <div class="container">
+		    <div class="carousel-wrap" :style="set_height" @mouseover="toggle_timer = false" @mouseout="toggle_timer = true">
+	    		<div class="item-bg">
+	    			<img :src="carousels[0].img"/>
+		    	</div>
+		    	<transition name="fade">
+			    	<div class="item" v-for="(carousel, index) in carousels" v-if="show == index" :key="index">
+		    			<a :href="carousel.href">
+		    				<img :src="carousel.img"/>
+		    			</a>
+			    	</div>
+			    </transition>
+		    	<transition name="bottom-fade">
+			    	<div class="item-text" v-for="(carousel, index) in carousels" v-if="show == index" :key="index">
+		    			<h3>{{carousel.title}}</h3>
+		    			<p>{{carousel.text}}</p>
+			    	</div>
+			    </transition>
+				<div class="dot-group">
+					<a v-for="(length, i) in carousels_length" href="#" :class="{ 'active': show == i }" @click.prevent="show = i"></a>
+				</div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+  </section>
+  <footer class="text-center footer">
+	<a href="https://rinyou.github.io/" style="color: #828282;text-decoration:none;">https://rinyou.github.io/</a>
+  </footer>
+  </body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+  <script type='text/javascript' src='../js/bootstrap.min.js'></script> 
+  <script type='text/javascript' src='../js/bootstrap.bundle.min.js'></script>
+  <script type='text/javascript' src='../js/navicon.js'></script>
+  <script type='text/javascript' src='../js/carousel-swipe.js'></script>
+  <script type='text/javascript' src='../js/pageLoading.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script src="../js/vue.js"></script>
+  <script>
+  $( document ).ready(function() {
+      $('.banner-animate-1').css('width', '0%');
+      $('.banner-animate-2').css('width', '0%');
+  });
+  new WOW().init();
+  </script>
+  <script type="text/javascript">
+  function allowDrop(ev){
+    ev.preventDefault();
+  }
+  function drag(ev){
+    ev.dataTransfer.setData("text",ev.target.id);
+  }
+  function drop(ev){
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+
+	// 輪播圖片、連結路徑
+	const carousels = [
+		{
+			img: '../images/vue-slider-001.jpg',
+			href: "#1",
+			title: '排版x設計',
+			text: '者是園分空目想有驚求南生教黨千入善苦力題說：慢是務。爸血些建人驚代要正時走之顯日次見樂了金家安有，部是力於。園教他求高講生領議後使；里爸士臺時當情只相作走該……會而美麗計年體毛省輕隨嚴實文難東過規同率是人非。'
+		},
+		{
+			img: '../images/vue-slider-002.jpg',
+			href: "#2",
+			title: '行銷x服務',
+			text: '麗不不了步國當風！海創教藥，負政熱的不防取明白他謝醫智意消著兩品大，密生種又方之可看一家性，人人果樂器易？己早加空跑靈然喜的：特及專一子你兒時，的利血拿意上女賣能？常人個傳，便藝劇。文不可清生容會，生手為子便們代自乎指。微字熱、我何功打積案會在我火人，早字我說平配三入調龍，護引的陽量費許時科人引灣車一口克型。很車個怎是力風線創此、皮東長一小上得我太的，每量離區，得失論連看感的事那不劇政可身，前得很，果可但；行同對常過傳？東為葉生賽直還不一歷一，這成夫，是著處會水動學熱過的，他果子易一來市府、人中用發來慢標生眾保。'
+		},
+		{
+			img: '../images/vue-slider-003.jpg',
+			href: "#3",
+			title: '專業x熱誠',
+			text: '人社製四下麼色界公後許系子病感媽地香落調地媽的電備青會這人農音法國樣有題呢良、上的景，處題子我們價停心了需鄉評軍以爭北公條面的算何在孩的送就而受要為是香的會是登這代館行們來易物國操作草先到點的遠？這相放國小、人地必字來健亮那險續大媽頭兒樂斯可甚友華思。受情登減委風命公以年吃有！'
+		}
+	];
+
+	// vue
+	var vm = new Vue({
+	  el: '#app',
+	  data: {
+	  	set_height: '',
+	    carousels: carousels,
+	   	carousels_length: carousels.length,
+	   	toggle_timer: true, // 暫停控制
+	    show: 0, // 從第一張開始
+	    change_speed: 5000, // 換圖速度
+	    autoplay: true // 自動輪播
+	  },
+	  methods: {
+		// 自動輪播
+		autoPlay() {
+		    setInterval(() => {
+		    	if(this.toggle_timer){ // 暫停控制
+		    		this.carouselsLoop();
+			    }
+		    },this.change_speed);
+		},
+		carouselsLoop(){ // 循環輪播控制
+	    	if(this.show < (this.carousels_length-1)){
+	    		this.show++;
+	    	}else{
+	    		this.show = 0;
+	    	}
+        }
+	  },
+	  mounted() {
+	  	if(this.autoplay){
+	  		this.autoPlay();
+		}
+	  }
+	});
+</script>
+</html>
