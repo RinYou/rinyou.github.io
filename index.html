@@ -146,20 +146,26 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/21/unity002/">unity002</a>
+      <a class="article-title" href="/2023/07/21/unity002/">Unity 2D學習之路 (一)： Unity 2D isometric game (等距視角遊戲)</a>
     </h1>
   
 
         
         <a href="/2023/07/21/unity002/" class="archive-article-date">
-  	<time datetime="2023-07-21T11:28:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-21</time>
+  	<time datetime="2023-07-21T11:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="什麼是等距視角遊戲"><a href="#什麼是等距視角遊戲" class="headerlink" title="什麼是等距視角遊戲?"></a>什麼是等距視角遊戲?</h2><p>主已是由isometric game這字而來，如世紀帝國、紅色警戒…等遊戲的視角，也可能是RPG, SRPG，近來這視角的遊戲以戰旗遊戲居多<br><img src="https://rinyou.github.io/2023/07/21/unity002/unity002-01.webp" alt="isometric game"></p>
+<p>本次練習使用的素材，32×32的圖片組成的sheet(自製無版權問題)<br><img src="https://rinyou.github.io/2023/07/21/unity002/unity002-02.png" alt="isometric game"></p>
+<p>首先開新Unity 2D檔案<br>將素材導入(直接拖入)Assets中<br><img src="https://rinyou.github.io/2023/07/21/unity002/unity002-03.webp" alt="isometric game"></p>
+<p>1.點選在Assets中的圖片<br>2.Inspector視窗會出現圖片設定<br>3.Pixels Per Unit 設定 32 (依需求設定越小圖片越大)<br>4.Filter Mode 設定 Ponit(no filter) 像素圖這樣才能顯示出原味<br>5.Compression 設定 None 不要對圖片做任何壓縮<br>6.接著點選下方Apply<br><img src="https://rinyou.github.io/2023/07/21/unity002/unity002-04.webp" alt="isometric game"><br><img src="https://rinyou.github.io/2023/07/21/unity002/unity002-05.webp" alt="isometric game"></p>
+<p>##設定圖片切片<br>1.點選Sprite Editor<br>2.點選Slice<br>3.Type選擇Grid By Cell Size<br>4.因為這張sheet是由32×32的圖片所組成 所以Pixel Size設定 x 32 y 32<br>5.點選下方Slice進行切片<br>6.最後點右上Apply同意切片<br><img src="https://rinyou.github.io/2023/07/21/unity002/unity002-06.webp" alt="isometric game"><br><img src="https://rinyou.github.io/2023/07/21/unity002/unity002-07.webp" alt="isometric game"></p>
+<p>##建置Tile Palette<br>主要用於描繪地形<br><img src="https://rinyou.github.io/2023/07/21/unity002/unity002-08.webp" alt="isometric game"><br>1.Window &gt; 2D &gt; Tile Palette 開啟視窗<br>2.點選Create New Palette</p>
+
       
 
       
@@ -167,7 +173,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Unity</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/unity-category//" class="article-tag-list-link color1">Unity</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
