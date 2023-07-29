@@ -139,6 +139,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-unity003" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/07/29/unity003/">Unity 2D學習之路 (一)： Unity 2D isometric game (等距視角遊戲) 碰撞</a>
+    </h1>
+  
+
+        
+        <a href="/2023/07/29/unity003/" class="archive-article-date">
+  	<time datetime="2023-07-29T07:06:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="新增碰撞Tilemap控制角色移動"><a href="#新增碰撞Tilemap控制角色移動" class="headerlink" title="新增碰撞Tilemap控制角色移動"></a>新增碰撞Tilemap控制角色移動</h2><p>附上本次使用的素材(自製無版權問題)<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-01.png" alt="isometric game"><br>同上次步驟新增一個Collider名稱的Palette<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-02.webp" alt="isometric game"><br>接著導入素材修改Tile Anchor<br>完成後應該像下圖這樣<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-03.webp" alt="isometric game"></p>
+<p>在第一章新增的網格新增一個Tilemap<br>網格右鍵 &gt; 2D Object&gt; &gt; Tilemap &gt; Isometric<br>名稱取Collider<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-04.webp" alt="isometric game"><br>Tile Anchor改 1 1 0</p>
+<p>Collider新增Composite Collider 2D<br>會自動產生一個Rigid body 2D<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-05.webp" alt="isometric game"><br>Rigid body 2D的Body Type要改成Kinematic才不會受重力影響往下掉<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-06.webp" alt="isometric game"></p>
+<p>Collider新增Tilemap Collider 2D<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-07.webp" alt="isometric game"><br>接著打勾 Used By Composite<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-08.webp" alt="isometric game"></p>
+<p>Tilemap Renderer的Additional Settings裡面的Sorting Layer記得設定比繪製的Tilemap高<br>這樣才不會被蓋到<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-09.webp" alt="isometric game"><br>這樣一來就可以繪製碰撞範圍<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-10.webp" alt="isometric game"><br>這樣一來雖然可以繪製碰撞區塊<br>但因為整個覆蓋過去在遊戲製作上會不清楚原本塗層是什麼圖樣<br>因此我們做一個半透明材質<br>在Assets資料夾按右鍵 &gt; Create &gt; Material<br>這裡名字取Collider<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-11.webp" alt="isometric game"><br>點選剛剛新增的Material<br>Shader改成Sprite&#x2F;Default<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-12.webp" alt="isometric game"></p>
+<p>接著改成喜好的顏色，並調整透明度<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-13.webp" alt="isometric game"><br>選擇Collider Object的Tilemap Renderer &gt; Material選擇剛剛建立的Collider Material<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-14.webp" alt="isometric game"><br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-15.webp" alt="isometric game"></p>
+<p>最終效果<br><img src="https://rinyou.github.io/2023/07/29/unity003/unity003-16.webp" alt="isometric game"></p>
+<p>重要請勿直接將圖片調整透明度會影響碰撞<br>如直接調整可能會無法正常檢測到碰撞</p>
+<p>下章講解加入人物</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Unity</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/unity-category//" class="article-tag-list-link color1">Unity</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/07/29/unity003/">View Detail >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-unity002" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -146,7 +239,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/21/unity002/">Unity 2D學習之路 (一)： Unity 2D isometric game (等距視角遊戲)</a>
+      <a class="article-title" href="/2023/07/21/unity002/">Unity 2D學習之路 (一)： Unity 2D isometric game (等距視角遊戲) Tilemap</a>
     </h1>
   
 
@@ -886,14 +979,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
@@ -902,15 +987,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Microsoft Office</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">像素圖</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Microsoft Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Unity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
             
             <div class="clearfix"></div>
